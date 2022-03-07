@@ -16,10 +16,10 @@ export const UserView: React.FC<{}> = () => {
 
     const { id } = useParams<any>();
 
-    const [user, setUser] = React.useState<UserI>()
-    const [userTasks, setUserTasks] = React.useState<TaskI[]>()
+    const [user, setUser] = useState<UserI>()
+    const [userTasks, setUserTasks] = useState<TaskI[]>()
 
-    React.useEffect(() => {
+    useEffect(() => {
         userService.getById(id)
             .then(data => setUser(data))
         userService.getTasksById(id)
